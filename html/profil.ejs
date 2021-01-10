@@ -1,0 +1,27 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="container">
+  <div align="center" class="jumbotron">
+
+       <img src="https://cdn.discordapp.com/avatars/<%=kisi.id%>/<%=kisi.avatar%>.png?size=512" class="rounded-circle panell">
+       <h3 style="color:#fff"><%=kisi.username%>#<%=kisi.discriminator%></h3>
+    <br>
+       <h5 style="color:#fff">Profil Bilgisi</h5>
+    
+
+       <% if (bot.profil[kisi.id]) { %>
+        <h6 style="color:#fff">İsim: <%= bot.profil[kisi.id].isim || "Bilinmiyor" %></h6><br>
+        <h6 style="color:#fff">Yaş: <%= bot.profil[kisi.id].yas || "Bilinmiyor" %></h6><br>
+        <h6 style="color:#fff">Biyografi: <%= bot.profil[kisi.id].biyo %></h6>
+        <h6 style="color:#ffff">Favori kodlama dili: <%= bot.profil[kisi.id].favlib || "Yok" %></h6><br>
+        <h6 style="color:#fff">Bildiği kodlama dilleri: <%= bot.profil[kisi.id].libs || "Yok" %></h6>
+       <% } else { %>
+       <% } %>
+    <br>
+     <a href="/kullanici/<%=kisi.id%>/profil/ayarla" class="btn btn-default" style="background-color:#99AAB5; color:#fff">Profili Düzenle</a>
+
+  </div>
+
+
+
+</div></div>
+<% include ./ek/footer %>
